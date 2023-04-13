@@ -20,20 +20,43 @@ function createTikets() {
         } else if (age > 65) {
             priceVoyage -= priceVoyage / 100 * 40;
         }
-        priceVoyage = parseFloat(priceVoyage).toFixed(2);
+        priceVoyage = priceVoyage.toFixed(2);
         document.querySelector("h2").innerText = priceVoyage + " €";
     }
     if (isNaN(distance) || isNaN(age)) {
-        alert ("non è un numero");
-        document.querySelector("h2").innerText = "Ricarica la pagina";
+        // alert ("non è un numero");
+        // document.querySelector("h2").innerText = "Ricarica la pagina";
+        alert("i dati inseriti non sono validi");
+        location.reload();
     }
-
     // aplicare sconto se necessario
-
 }
 
 
+// Alternative
 
+// function createTikets () {
+//     const km = prompt("Quanti km devi percorrere?");
+//     const age = prompt("Quanti anni hai?");
+//     const priceForKm = 0.21;
+//     let tiketPrice = km * priceForKm;
+//     console.log(tiketPrice);
+//     if (tiketPrice > 0) {
+//         if ( age < 18) {
+//             tiketPrice = tiketPrice - (tiketPrice * 20 / 100);
+//             document.querySelector("h2").innerText = tiketPrice.toFixed(2) + " €";
+//             // console.log(tiketPrice);
+//         } else if ( age >= 65) {
+//             tiketPrice = tiketPrice - (tiketPrice * 60 / 100);
+//             document.querySelector("h2").innerText = tiketPrice.toFixed(2) + " €";
+//         } else {
+//             document.querySelector("h2").innerText = tiketPrice.toFixed(2) + " €";
+//         }
+//     } else {
+//         alert("i dati inseriti non sono validi");
+//         location.reload();
+//     }
+// }
 
 
 
