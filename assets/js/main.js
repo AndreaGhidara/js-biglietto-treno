@@ -36,12 +36,13 @@ function createTikets() {
 // Alternative
 
 // function createTikets () {
-//     const km = prompt("Quanti km devi percorrere?");
-//     const age = prompt("Quanti anni hai?");
+//     const km = parseInt(prompt("Quanti km devi percorrere?"));
+//     const age = (prompt("Quanti anni hai?"));
+//     console.log(age);
 //     const priceForKm = 0.21;
 //     let tiketPrice = km * priceForKm;
 //     console.log(tiketPrice);
-//     if (tiketPrice > 0) {
+//     if ( tiketPrice > 0 && age > 0 ) {
 //         if ( age < 18) {
 //             tiketPrice = tiketPrice - (tiketPrice * 20 / 100);
 //             document.querySelector("h2").innerText = tiketPrice.toFixed(2) + " €";
@@ -52,9 +53,12 @@ function createTikets() {
 //         } else {
 //             document.querySelector("h2").innerText = tiketPrice.toFixed(2) + " €";
 //         }
+//     } else if( isNaN(age) || isNaN(km) ) {
+//         alert("i dati inseriti non sono validi")
+//         location.reload()
 //     } else {
-//         alert("i dati inseriti non sono validi");
-//         location.reload();
+//         alert("i dati inseriti non sono validi")
+//         location.reload()
 //     }
 // }
 
