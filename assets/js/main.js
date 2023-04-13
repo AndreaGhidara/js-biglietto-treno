@@ -6,21 +6,30 @@
 
 function createTikets() {
     const distance = parseInt(prompt("quanti km devi fare?"));
-    const age = prompt("Quanti anni hai?");
+    console.log(distance);
+    const age = parseInt(prompt("Quanti anni hai?"));
+
     const priceKm = 0.21;
     // calcolare costo viaggio
     let priceVoyage = distance * priceKm;
     console.log(priceVoyage);
 
-    // aplicare sconto se necessario
-    if (age < 18) {
-        priceVoyage -= priceVoyage / 100 * 20;
-    } else if (age < 65) {
-        priceVoyage -= priceVoyage / 100 * 40;
+    if ( priceVoyage != NaN) {
+        if (age < 18) {
+            priceVoyage -= priceVoyage / 100 * 20;
+        } else if (age > 65) {
+            priceVoyage -= priceVoyage / 100 * 40;
+        }
+        priceVoyage = parseFloat(priceVoyage).toFixed(2);
+        document.querySelector("h2").innerText = priceVoyage + " €";
+    }
+    if (isNaN(distance) || isNaN(age)) {
+        alert ("non è un numero");
+        document.querySelector("h2").innerText = "Ricarica la pagina";
     }
 
-    priceVoyage = parseFloat(priceVoyage).toFixed(2);
-    document.querySelector("h2").innerText = priceVoyage + " €";
+    // aplicare sconto se necessario
+
 }
 
 
